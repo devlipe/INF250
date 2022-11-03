@@ -31,8 +31,9 @@ addi t3, t3, 1
 sem_overflow:
 #Nesse ponto temos t3 como expoente e t5 como a mantissa
 #Removemos o 1 que adicionamos no inicio à mantissa
-andi t5,t5, 15
+andi t5,t5, 0xf
 #Deslocamos o expoente para juntar os numeros
 slli t3, t3, 4
 
-add t0, t3,t5 # Coloca o resultado em t0xpoentes_iguais:
+add t0, t3,t5 # Coloca o resultado em t0
+
