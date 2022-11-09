@@ -69,17 +69,17 @@ CONTINUA:
     addi t4, x0, 0x32 # Algarismo 2
     sw t4, 0(gp)
     addi t4, x0, 0x5e # Char ^
-    sw t4, 1(gp)
+    sw t4, 4(gp)
     # Convertendo o expoente
     addi t4, x0, 0x30
     add t4, t4, t1
-    sw t4, 2(gp)
+    sw t4, 8(gp)
    	addi t4, x0, 0x2a # Char *
-    sw t4, 3(gp)
+    sw t4, 12(gp)
     addi t4, x0, 0x31 # Algarimo 1
-    sw t4, 4(gp)
+    sw t4, 16(gp)
     addi t4, x0, 0x2e # Char .
-    sw t4, 5(gp)
+    sw t4, 20(gp)
     #Convertendo toda a mantissa
     addi t4, x0, 0x30
     
@@ -90,8 +90,8 @@ CONTINUA:
     
     #Salvando os valores na memoria
     
-	sw a0, 6(gp)
-	sw a1, 7(gp)
-	sw a2, 8(gp)
-	sw a3, 9(gp)
+	sw a0, 24(gp)
+	sw a1, 28(gp)
+	sw a2, 32(gp)
+	sw a3, 36(gp)
 	
