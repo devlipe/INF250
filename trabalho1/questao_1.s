@@ -35,5 +35,5 @@ andi t5,t5, 0xf
 #Deslocamos o expoente para juntar os numeros
 slli t3, t3, 4
 
-add t0, t3,t5 # Coloca o resultado em t0
+add t2, t3,t5 # Coloca o resultado em t0
 
