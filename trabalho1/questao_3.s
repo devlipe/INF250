@@ -153,21 +153,24 @@ loop_min:
 	lw s8, 0(t2) # Classe
     addi t2, t2, -4
     lw s9, 0(t2) # Distancia
+    addi t2, t2, -4
     blt s8, x0, ragnarok
     
-    bge s9, s3, indiferente
+    bge s9, s3, proximo # Se a distancia for maior desconsidera o ponto
     add s3, x0, s9
     add s2, x0, s8
-    j indiferente
-    bge s9, s5, indiferente
+    j final
+proximo:
+    bge s9, s5, proximo_1 # Se a distancia for maior desconsidera o ponto
     add s5, x0, s9
     add s4, x0, s8
-    j indiferente
-    bge s9, s7, indiferente
+    j final
+proximo_1:
+    bge s9, s7, final # Se a distancia for maior desconsidera o ponto
     add s7, x0, s9
     add s6, x0, s8
-    j indiferente
-    indiferente:
+    j final
+    final:
     	j loop_min
 
 ragnarok:
@@ -176,10 +179,7 @@ ragnarok:
     beq s4, s6, s4_igual
     s2_igual:
     	sw s2, 0(gp)
+        j kratos
     s4_igual:
     	sw s4, 0(gp)
-	
-
-
-	
-       nd:
+kratos:
